@@ -35,7 +35,7 @@ queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/TXXY
 if not getgenv().settin then
 	getgenv().settin = {
 		['WebHook'] = {
-			['Webhook'] = "",
+			['Webhook'] = "https://discord.com/api/webhooks/1061611553994047508/iC6NjrKUGeyW7O1ZSyShStfrn7mnsapOuBVf1dJForugRCidKjmMOLRQHNywo_Gg4daA",
 		},
 		['ServerHopDelay'] = 15, -- minutes, resets every donation
 		['MinimumWithdrawAmount'] = 1000, -- fake withdraw amount
@@ -49,7 +49,9 @@ if not getgenv().settin then
 				'🤑 THE MORE WINS IN A ROW, THE HIGHER THE CHANCE TO WIN 🤑',
 				'🤑 FIRST CASINO TO OFFER LOW WITHDRAW 🤑',
 				'🤑 UPDATES EVERY FEW DAYS 🤑',
-				'🤑 GUARANTEED MONEY BACK IF YOU FIND A BETTER CASINO THAN US 🤑'
+				'🤑 GUARANTEED MONEY BACK IF YOU FIND A BETTER CASINO THAN US 🤑',
+				'🤑 FREE 500 BOBUX EVERY 10TH WIN 🤑',
+				'🤑 JOIN OUR GROUP FOR GIVEAWAYS 🤑',
 			}
 		}
 	}
@@ -107,7 +109,7 @@ function webhook(...)
 	local c = game:GetService("MarketplaceService")
 	local c = c:GetProductInfo(game.PlaceId, Enum.InfoType.Asset)
 	local a = {
-		["title"] = "> CF-Trail's Casino™ | **" .. Players.LocalPlayer.Name .. " got donated! :D**",
+		["title"] = "> Kyukei's Custom Casino™ | **" .. Players.LocalPlayer.Name .. " got donated! :D**",
 		["description"] = "https://discord.gg/8jxEbMAEQD",
 		["type"] = "rich",
 		["color"] = tonumber(getgenv().embedcolor),
@@ -310,7 +312,7 @@ msgdone.OnClientEvent:Connect(function(msgdata)
 		end
 	end
 	if message == '.balance' or message == '.bal' then
-		chat('💸 Your balance: ' .. tostring(bal) or '0' .. ' 💸')
+		chat('💸 Your balance: ' .. tostring(bal) or '0, donate to add to balance. Each donation is added to balance.' .. ' 💸')
 		return
 	end
 	if message == '.play' then
@@ -325,7 +327,7 @@ msgdone.OnClientEvent:Connect(function(msgdata)
 		end
 		local slotVal = tonumber(slotValx)
 		if bal == 0 then
-			chat('💸 Your balance is 0! You cannot play! 💸')
+			chat('💸 Your balance is 0! You cannot play! Donate to add to balance! 💸')
 			return
 		end
 		if bal < slotVal then
